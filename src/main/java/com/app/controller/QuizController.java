@@ -18,7 +18,7 @@ public class QuizController {
         return "quiz/mouse";
     }
 
-	@RequestMapping("/quiz/product/keyboard")
+	@RequestMapping("/quiz/product/keyboard")	//얘가 도매인 주소임 
     public String keyboard() {
         return "quiz/keyboard";
     }
