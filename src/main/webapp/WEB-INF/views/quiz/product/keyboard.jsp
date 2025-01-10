@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>keyboard페이지 입니다</h1>
+	<h1>quiz keyboard</h1>
 </body>
 </html>
