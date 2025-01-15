@@ -17,7 +17,6 @@ import com.app.dto.ResponseItem;
 @Controller
 public class Quiz05Controller {
 
-	//request 활용
 	@GetMapping("/quiz05/request1-1")
 	public String request1_1(HttpServletRequest request){
 		
@@ -27,7 +26,6 @@ public class Quiz05Controller {
 		return "quiz/quiz05/quiz05";
 	}
 	
-	//RequestParam 활용
 	@GetMapping("/quiz05/request1-2")
 	public String request1_2(@RequestParam String category, @RequestParam String product){
 		
@@ -37,7 +35,6 @@ public class Quiz05Controller {
 		return "quiz/quiz05/quiz05";
 	}
 	
-	//Dto 객체 활용
 	@GetMapping("/quiz05/request1-3")
 	public String request1_3(@ModelAttribute Quiz05Request quiz05Request){
 		System.out.println(quiz05Request.getCategory());
@@ -46,7 +43,6 @@ public class Quiz05Controller {
 		return "quiz/quiz05/quiz05";
 	}
 	
-	//Map 활용
 	@GetMapping("/quiz05/request1-4")
 	public String request1_4(@RequestParam Map<String, String> paramMap){
 		System.out.println(paramMap.get("category"));
@@ -55,7 +51,6 @@ public class Quiz05Controller {
 		return "quiz/quiz05/quiz05";
 	}
 	
-	//request 활용
 	@GetMapping("/quiz05/response1-1")
 	public String response1_1(HttpServletRequest request) {
 		request.setAttribute("response001", "message");
@@ -64,7 +59,6 @@ public class Quiz05Controller {
 		return "quiz/quiz05/quiz05";
 	}
 	
-	//model 활용
 	@GetMapping("/quiz05/response1-2")
 	public String response1_2(Model model) {
 		model.addAttribute("response001", "message1-2");
@@ -73,7 +67,6 @@ public class Quiz05Controller {
 		return "quiz/quiz05/quiz05";
 	}
 	
-	//ModelAndView 활용
 	@GetMapping("/quiz05/response1-3")
 	public ModelAndView response1_3() {
 		
@@ -86,8 +79,6 @@ public class Quiz05Controller {
 		
 		return mav;
 	}
-	
-	//ModelAttribute 활용
 	
 	@GetMapping("/quiz05/response1-4")
 	//public String response1_4(ResponseItem responseItem) {		//@ModelAttribute 어노테이션 생략가능

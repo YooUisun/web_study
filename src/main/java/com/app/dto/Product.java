@@ -1,15 +1,12 @@
 package com.app.dto;
 
 public class Product {
-	
 	public String id;
 	public String name;
 	public int price;
 	
-	
 	//
 	//
-	
 	
 	public String getId() {
 		return id;
@@ -32,4 +29,3 @@ public class Product {
 	
 	
 }
-

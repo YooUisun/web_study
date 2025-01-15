@@ -2,7 +2,7 @@ package com.app.dto;
 
 public class Quiz05Request {
 	String category;
-	int product;	//4000 //만약 문자가 섞여있다면 String product 로 하면 됨.
+	int product;  //4000    40B103
 	
 	public String getCategory() {
 		return category;

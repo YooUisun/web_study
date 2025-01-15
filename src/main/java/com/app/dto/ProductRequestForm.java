@@ -1,7 +1,6 @@
 package com.app.dto;
 
 public class ProductRequestForm {
-	
 	public String id;
 	public String name;
 	public int price;
@@ -27,4 +26,3 @@ public class ProductRequestForm {
 	
 	
 }
-
