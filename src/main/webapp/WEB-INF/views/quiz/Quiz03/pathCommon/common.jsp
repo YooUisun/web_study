@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>공지사항 페이지</h1>
+	<h1>common</h1>
+	<h2>${productName}</h2>
 </body>
 </html>

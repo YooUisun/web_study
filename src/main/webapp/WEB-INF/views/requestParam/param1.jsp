@@ -17,8 +17,8 @@
 			<button type="submit">전송</button>
 		</form>
 		
-		<a href = "/param2?abc=asodf&def=12313">param2로</a>
-		
+		<a href="/param2?abc=asodf&def=12313">param2로</a>
+	
 	</div>
 </body>
 </html>

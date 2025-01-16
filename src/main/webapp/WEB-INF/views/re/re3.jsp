@@ -10,6 +10,5 @@
 	<script>
 		location.href = "/re/re2";
 	</script>
-
 </body>
 </html>

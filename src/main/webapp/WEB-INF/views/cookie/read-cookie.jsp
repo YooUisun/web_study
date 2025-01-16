@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>	
+<body>
 	<h1>read-cookie</h1>
 	<h2>${weather}</h2>
 </body>

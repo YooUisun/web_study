@@ -14,8 +14,8 @@
 	<p>${sessionMsg}</p>
 	<p>${sessionScope.sessionMsg}</p>
 	
-	<p>${applicationMsg }</p>
-	<p>${applicationScope.applicationMsg }</p>
+	<p>${applicationMsg}</p>
+	<p>${applicationScope.applicationMsg}</p>
 	
 </body>
 </html>
