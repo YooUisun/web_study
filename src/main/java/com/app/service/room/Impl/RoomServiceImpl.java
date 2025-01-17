@@ -1,4 +1,4 @@
-package com.app.service.room.impl;
+package com.app.service.room.Impl;
 
 import java.util.List;
 
