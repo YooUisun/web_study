@@ -1,4 +1,4 @@
-package com.app.service.room.Impl;
+package com.app.service.room.impl;
 
 import java.util.List;
 
@@ -38,6 +38,14 @@ public class RoomServiceImpl implements RoomService {
 		
 		
 		return roomList;
+	}
+
+	@Override
+	public int saveRoom(Room room) {
+		
+		int result = roomDAO.saveRoom(room);
+		
+		return result;
 	}
 
 }
