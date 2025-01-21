@@ -2,10 +2,13 @@ package com.app.controller.admin;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.app.dto.room.Room;
@@ -59,22 +62,77 @@ public class AdminController {
 
 	}
 
+	// 관리자 특정 객실에 대한 정보 (상세페이지)
+
+	// /admin/roomInfo?roomId=2
+	// /admin/roomInfo?roomId=1
+	// /admin/roomInfo?roomId=40
+	// @GetMapping("/admin/roomInfo")
+
+	// /admin/room/2   		2번 방
+	// /admin/room/50 		50번 방
+	// /admin/room/90 		90번 방 이런 느낌임
+	
+	@GetMapping("/admin/room/{roomId}")
+	public String room(@PathVariable String roomId, Model model) {
+		
+		int roomIdInt = Integer.parseInt(roomId);
+		Room room = roomService.findRoomByRoomId(roomIdInt);
+		model.addAttribute("room", room);
+		
+		return "admin/room";
+	}
+	
+	//특정 객실정보 삭제
+	@GetMapping("/admin/removeRoom")
+	public String removeRoom(HttpServletRequest request) {
+	String roomId = request.getParameter("roomId");
+		
+	int roomIdInt = Integer.parseInt(roomId);
+	
+	int result = roomService.removeRoom(roomIdInt);
+	
+	return "redirect:/admin/rooms";
+//	if(result >0) {
+//		
+//	}else {
+//		
+//	}
+//	return roomId;
+//
+	}
+
 	// 고객 관리/등록
 
 	@GetMapping("/admin/users/add")
 	public String addUser() {
 		return "admin/addUser";
 	}
-	
+
 	@PostMapping("/admin/users/add")
 	public String addUserAction(User user) {
-		
-		//사용자 추가 (관리자X)
+
+		// 사용자 추가 (관리자X)
 		user.setUserType("CUS");
 		int result = userService.saveUser(user);
 //		int result = userService.saveCustomerUser(user);
 		System.out.println("사용자 추가 처리 결과: " + result);
-		return "admin/addUser";
+
+		if (result > 0) {
+			return "redirect:/admin/users";
+		} else {
+			return "admin/addUser";
+		}
+	}
+
+	@GetMapping("/admin/users")
+	public String users(Model model) {
+
+		List<User> userList = userService.findUserList();
+
+		model.addAttribute("userList", userList);
+
+		return "admin/users";
 
 	}
 }
