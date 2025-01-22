@@ -13,17 +13,17 @@ import com.app.dto.room.Room;
 // APIServiceRepository
 @Repository   //Bean 등록 Annotation
 public class RoomDAOImpl implements RoomDAO {
-	
-	@Autowired
-	SqlSessionTemplate sqlSessionTemplate;
 
+	@Autowired			
+	SqlSessionTemplate sqlSessionTemplate;			
+
+	
 	@Override
 	public List<Room> findRoomList() {
 		
 		System.out.println("RoomDAO 호출 됨");
 		//db 연결 조회
 		List<Room> roomList = sqlSessionTemplate.selectList("room_mapper.findRoomList");
-		
 		
 		return roomList;
 	}
@@ -39,16 +39,17 @@ public class RoomDAOImpl implements RoomDAO {
 
 	@Override
 	public Room findRoomByRoomId(int roomId) {
+		
 		Room room = sqlSessionTemplate.selectOne("room_mapper.findRoomByRoomId", roomId);
 		
 		return room;
-			
 	}
 
 	@Override
 	public int removeRoom(int roomId) {
 		
 		int result = sqlSessionTemplate.delete("room_mapper.removeRoom", roomId);
+		
 		return result;
 	}
 

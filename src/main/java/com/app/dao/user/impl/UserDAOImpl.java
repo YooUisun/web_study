@@ -12,20 +12,31 @@ import com.app.dto.user.User;
 @Repository
 public class UserDAOImpl implements UserDAO {
 
-	@Autowired
-	SqlSessionTemplate sqlSessionTemplate;
-
+	@Autowired			
+	SqlSessionTemplate sqlSessionTemplate;		
+	
 	@Override
 	public int saveUser(User user) {
+		
 		int result = sqlSessionTemplate.insert("user_mapper.saveUser", user);
-
+		
 		return result;
 	}
 
 	@Override
 	public List<User> findUserList() {
+		
 		List<User> userList = sqlSessionTemplate.selectList("user_mapper.findUserList");
+		
 		return userList;
+	}
+
+	@Override
+	public User findUserById(String id) {
+
+		User user = sqlSessionTemplate.selectOne("user_mapper.findUserById", id);
+		
+		return user;
 	}
 
 }

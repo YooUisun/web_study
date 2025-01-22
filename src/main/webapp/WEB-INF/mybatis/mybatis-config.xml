@@ -8,9 +8,9 @@
 		<setting name="jdbcTypeForNull" value="NULL" />
 	</settings>
 	
-	<typeAliases>	<!-- 별명 짓는거임  편의성을 위해서-->
+	<typeAliases>
 		<typeAlias type="com.app.dto.room.Room" alias="Room" />
-		<typeAlias type="com.app.dto.user.User" alias="User"/>		
+		<typeAlias type="com.app.dto.user.User" alias="User" />
 	</typeAliases>
 	
 </configuration>

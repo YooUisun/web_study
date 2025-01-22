@@ -7,14 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>관리자 페이지</h1>
-	<h2>사용자 추가</h2>
+	<h1>로그인 페이지</h1>
 	
 	<form action="" method="post">
-		사용자 아이디 : <input type="text" name="id"> <br>
-		사용자 이름 : <input type="text" name="name"> <br>
-		<button type="submit">등록하기</button>
+		아이디 : <input type="text" name="id"> <br>
+		비밀번호 :  <input type="password" name="pw"> <br>
+		<button type="submit">로그인</button>
 	</form>
-	
 </body>
-</html> 
+</html>
