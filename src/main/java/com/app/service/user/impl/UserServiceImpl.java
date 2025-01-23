@@ -52,8 +52,8 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User checkUserLogin(User user) {	//로그인 		관리자/사용자
-		
 		//1) 서비스 자체에서 로직을 수행
+
 		/*
 		User loginUser = userDAO.findUserById(user.getId());
 
@@ -83,8 +83,8 @@ public class UserServiceImpl implements UserService {
 		//2) DAO->Mapper 쿼리를 만들어서 비교하는 방법
 		
 		User loginUser = userDAO.checkUserLogin(user);
-		return loginUser; //값O 로그인 정보 O
-		//null 로그인 정보 x
+		return loginUser; //값 O 로그인 정보 O
+		//null 로그인 정보 X
 	}
 
 
@@ -94,6 +94,15 @@ public class UserServiceImpl implements UserService {
 		User user = userDAO.findUserById(id);
 		
 		return user;
+	}
+
+
+	@Override
+	public int modifyUser(User user) {
+		
+		int result = userDAO.modifyUser(user);
+		
+		return result;
 	}
 
 }
